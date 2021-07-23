@@ -5,7 +5,7 @@ const User = require("../models/User")
 const bcrypt = require("bcrypt")
 const print = require("../script")
 
-const API = `http://localhost:8800/api`
+const API = process.env.API
 
 const fs = require("fs");
 const path = require("path")
