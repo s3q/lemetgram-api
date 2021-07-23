@@ -118,7 +118,7 @@ router.get("/:currentUser/:secondUser", async (req, res) => {
 
 
         const conversation = await Conversation.findOne({
-            members: { $in: [currentUser, secondUser] }
+            members: [currentUser, secondUser]
         })
 
         console.log(conversation)
