@@ -139,10 +139,14 @@ router.get("/:id_user/:type", async (req, res) => {
     if (req.params.id_user) {
         try {
 
+            console.log(req.params.id_user, req.params.type)
             let user = {}
-            if (req.params.type == "username" || req.params.type == "user") user = await User.findOne({ username: req.params.id_user })
-            else if (req.params.type == "userId" || req.params.type == "id") user = await User.findOne({ _id: req.params.id_user })
+            if (req.params.type == "username" || req.params.type == "user")
+                user = await User.findOne({ username: req.params.id_user })
+            else if (req.params.type == "userId" || req.params.type == "id")
+                user = await User.findOne({ _id: req.params.id_user })
 
+            console.log(user)
             const { password, updatedAt, ...others } = user._doc
             res.status(200).json(others)
         } catch (err) {
