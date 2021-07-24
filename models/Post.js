@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const postSchema = new mongoose.Schema({
     userId: {
         type: String,
-        require: true
+        required: true
     },
     title: {
         type: String,
@@ -16,7 +16,7 @@ const postSchema = new mongoose.Schema({
     img: {
         type: String,
         default: "",
-        require: true
+        required: true
     },
     likes: {
         type: Array,

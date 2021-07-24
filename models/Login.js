@@ -3,20 +3,20 @@ const mongoose = require('mongoose');
 const loginSchema = new mongoose.Schema({
     username: {
         type: String, 
-        require: true,
+        required: true,
         min: 3,
         max: 16,
         unique: true
     },
     name: {
         type: String, 
-        require: true,
+        required: true,
         min: 3,
         max: 20,
     },
     email: {
         type: String,
-        require: true,
+        required: true,
         max: 50,
         unique: true
     },
